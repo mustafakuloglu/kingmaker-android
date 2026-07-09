@@ -29,7 +29,7 @@ import kotlinx.coroutines.withContext
 
 private const val NOTIF_ID = 1905
 private const val NOTIF_CHANNEL_ID = "monitor_channel"
-private const val CHECK_INTERVAL_MS = 3_000L
+private const val CHECK_INTERVAL_MS = 10_000L
 private const val POPUP_WIDTH_RATIO = 0.9
 
 class MonitorService : Service() {
