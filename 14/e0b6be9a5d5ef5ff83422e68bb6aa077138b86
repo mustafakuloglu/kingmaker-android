@@ -1,0 +1,36 @@
+app/src/main/java/com/example/kingmaker/service/DashboardData.kt
+  s_c11e023b173e31::t_126951174c7ea3 1-21
+app/src/main/java/com/example/kingmaker/service/BackendClient.kt
+  s_c11e023b173e31::t_1f83822e4c4213 43-73,85
+app/src/main/java/com/example/kingmaker/MainActivity.kt
+  s_c11e023b173e31::t_0be0c0ab538f05 150
+  s_c11e023b173e31::t_ce2af824aa5535 25-30,32,35-51,57,73-85,90-92,124-132
+  s_c11e023b173e31::t_a94dc667f25211 19
+  s_c11e023b173e31::t_aeae3469877f30 14,16,18,20-22,33,55-56,58,88-89,93-117,136,143,149,151-167
+  s_c11e023b173e31::t_3fc7308cbe1b3b 133
+  s_c11e023b173e31::t_944b5bca6bc48a 168
+app/src/main/res/values/colors.xml
+  s_c11e023b173e31::t_281cbd0a111348 20-23
+app/src/main/java/com/example/kingmaker/ui/dashboard/DashboardScreen.kt
+  s_c11e023b173e31::t_00beab904efc5d 30-31
+  s_c11e023b173e31::t_f5ccb5acd3803c 153
+  s_c11e023b173e31::t_4929e9673c338d 1-29,32-152,154-203
+app/src/main/java/com/example/kingmaker/service/MonitorService.kt
+  s_c11e023b173e31::t_09852a58aae282 37-43,55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "14e0b6be9a5d5ef5ff83422e68bb6aa077138b86",
+  "prompts": {},
+  "sessions": {
+    "s_c11e023b173e31": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "120757b1-bf56-4734-b178-00f161e1e1e1",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mustafakuloglu <mustafakuloglunun@gmail.com>"
+    }
+  }
+}
