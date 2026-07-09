@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Kingmaker</string>
+    <string name="monitor_channel_name">Usage Monitor</string>
+    <string name="monitor_notification_title">Kingmaker is monitoring</string>
+    <string name="popup_reason_label">Reason</string>
+    <string name="popup_draft_label">Message to send</string>
+    <string name="popup_send">Send</string>
+    <string name="popup_skip">Skip</string>
+</resources>
