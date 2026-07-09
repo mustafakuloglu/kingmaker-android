@@ -1,5 +1,7 @@
 # Kingmaker
 
+Server side: [kingmaker-server](https://github.com/mustafakuloglu/kingmaker-server)
+
 An Android app that watches your outreach queue in the background and surfaces the
 single highest-priority next action as a floating pop-up — over whatever app you're
 currently using — so you can approve, edit, or skip it without breaking flow.
