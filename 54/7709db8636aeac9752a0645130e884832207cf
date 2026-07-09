@@ -1,0 +1,35 @@
+app/src/main/java/com/example/kingmaker/service/BackendClient.kt
+  s_c11e023b173e31::t_0eae5b6443b936 8-10
+  s_c11e023b173e31::t_54d16e7eff949d 1-7,11-79
+app/src/main/java/com/example/kingmaker/ui/popup/OverlayPopupContent.kt
+  s_c11e023b173e31::t_d2c16c8aa4a3f8 72,79,88
+  s_c11e023b173e31::t_6bfa5ebcf7913d 75,91,94,97,99
+  s_c11e023b173e31::t_afd8bf1ff2c453 130
+  s_c11e023b173e31::t_245f3e1122567c 47,51
+  s_c11e023b173e31::t_a38ee4903b7ff3 168-174
+  s_c11e023b173e31::t_0c3c17a088bbb3 148
+  s_c11e023b173e31::t_92f6cca7e88c78 74
+app/src/main/AndroidManifest.xml
+  s_c11e023b173e31::t_a4f35bc1e5e1ed 9,19
+app/src/main/java/com/example/kingmaker/service/MonitorService.kt
+  s_c11e023b173e31::t_2e10f052214144 28
+  s_c11e023b173e31::t_ab8a491a3c3efc 54-58,71-74
+app/src/main/java/com/example/kingmaker/service/NextAction.kt
+  s_c11e023b173e31::t_5ec5ebd7c07e95 4-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "547709db8636aeac9752a0645130e884832207cf",
+  "prompts": {},
+  "sessions": {
+    "s_c11e023b173e31": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "120757b1-bf56-4734-b178-00f161e1e1e1",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mustafakuloglu <mustafakuloglunun@gmail.com>"
+    }
+  }
+}
