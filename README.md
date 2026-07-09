@@ -15,6 +15,13 @@ currently using — so you can approve, edit, or skip it without breaking flow.
   pauses the popup polling — no point popping a card over the app you're already
   looking at.
 
+## Screenshots
+
+<p>
+  <img src="docs/screenshots/dashboard.png" width="280" alt="Dashboard screen" />
+  <img src="docs/screenshots/popup.png" width="280" alt="Popup overlay" />
+</p>
+
 ## Architecture
 
 ```mermaid
