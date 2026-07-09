@@ -1,0 +1,95 @@
+app/src/main/java/com/example/kingmaker/service/OverlayLifecycleOwner.kt
+  s_c11e023b173e31::t_3d64527d224b00 1-32
+app/src/main/res/values/colors.xml
+  s_c11e023b173e31::t_3cda496d4e7725 19
+  s_c11e023b173e31::t_4a8eb20f8c8d35 10-11,13-15
+  s_c11e023b173e31::t_3573d2717a71c0 12,16-18
+  s_c11e023b173e31::t_b876a1b6309010 7-9
+  s_c11e023b173e31::t_b8be745b2c83a7 20
+app/src/main/java/com/example/kingmaker/service/NextAction.kt
+  s_c11e023b173e31::t_e9eeaa4bbbbc94 1-8
+app/src/main/java/com/example/kingmaker/ui/popup/OverlayPopupContent.kt
+  s_c11e023b173e31::t_8d3ea6c397806f 1-4,7-27,31-32,34-35,38-41,43-49,53,55,83,89-90,110,125,151-154,170
+  s_c11e023b173e31::t_fe33de026b4f05 28-29
+  s_c11e023b173e31::t_da021bde2dc3a2 144-147
+  s_c11e023b173e31::t_25b90864184471 112-113,116-123
+  s_c11e023b173e31::t_e77de871fc65ad 37,42,56
+  s_c11e023b173e31::t_159fe499a8029f 50-52
+  s_c11e023b173e31::t_863a733b720df1 57,64-67,69-73,75-79,81-82,84,86,88,91-108,111,124,126-128,130-138,141-143,148-150,155-164,166-169
+  s_c11e023b173e31::t_bca3daf193996f 114-115
+  s_c11e023b173e31::t_30b0e4859cbb7c 54,58-63
+  s_c11e023b173e31::t_6ffe6dc84ecb3e 5-6
+  s_c11e023b173e31::t_269ab8b70fbd9f 30,33,36
+  s_c11e023b173e31::t_4911a7831cc7c4 68
+  s_c11e023b173e31::t_25fe5e8dfeba1b 74
+  s_c11e023b173e31::t_1799d5e811d47a 80
+  s_c11e023b173e31::t_e99c39d1694e6f 85
+  s_c11e023b173e31::t_aa05d48ab3835c 87
+  s_c11e023b173e31::t_3b4b9aef15035e 109
+  s_c11e023b173e31::t_e3340125c421ef 129
+  s_c11e023b173e31::t_399cd8251696ee 139-140
+  s_c11e023b173e31::t_1c1c3b415bd746 165
+.gitignore
+  s_c11e023b173e31::t_1109074e14a5bf 4-5
+  s_c11e023b173e31::t_9b21d8678a2062 1-3,6-11
+app/src/main/res/values/strings.xml
+  s_c11e023b173e31::t_34759370d966dd 5-8
+  s_c11e023b173e31::t_c3774bf0bc16c6 2-4
+  s_c11e023b173e31::t_7109b4e7e786e6 9
+app/src/main/AndroidManifest.xml
+  s_c11e023b173e31::t_0df01507f760ca 38
+  s_c11e023b173e31::t_10b5231b491cea 35-37
+  s_c11e023b173e31::t_65711c9faece8a 39-41
+app/src/main/java/com/example/kingmaker/MainActivity.kt
+  s_c11e023b173e31::t_00421c5b086541 43
+  s_c11e023b173e31::t_b3c55a89bdd7ac 40-42
+  s_c11e023b173e31::t_f761932c2ee502 44-46
+app/src/main/java/com/example/kingmaker/service/MonitorService.kt
+  s_c11e023b173e31::t_b8936b9d0b0094 26-31,44-46,55
+  s_c11e023b173e31::t_4882e40c35679f 13-20,37-38,69-80,93-96,100-101,124
+  s_c11e023b173e31::t_97e1d9fdd77a18 8-11,32,66-68,82-92,97-99,102-123,127
+  s_c11e023b173e31::t_b1562d3cde3c26 33,47-54,56-65,81
+  s_c11e023b173e31::t_9f18f0a340daea 5-7
+  s_c11e023b173e31::t_08480936dbfb1e 12
+  s_c11e023b173e31::t_29bb01d790d291 21-25
+  s_c11e023b173e31::t_353326867a658a 34-36
+  s_c11e023b173e31::t_3b353a00307dbb 39-43
+  s_c11e023b173e31::t_a0b9e32833d29d 125-126
+  s_c11e023b173e31::t_5bcf18fed21349 128-130
+app/.gitignore
+  s_c11e023b173e31::t_369b2968f165ce 1
+app/build.gradle.kts
+  s_c11e023b173e31::t_6c987bf07792f1 1-56
+app/src/main/java/com/example/kingmaker/ui/theme/Color.kt
+  s_c11e023b173e31::t_a8e36506e3f9c5 1-11
+app/src/main/java/com/example/kingmaker/ui/theme/Theme.kt
+  s_c11e023b173e31::t_e714243802171d 1-58
+app/src/main/java/com/example/kingmaker/ui/theme/Type.kt
+  s_c11e023b173e31::t_64d1c084e3f4b8 1-34
+build.gradle.kts
+  s_c11e023b173e31::t_3f205d443d952b 1-5
+gradle.properties
+  s_c11e023b173e31::t_d4c2e2f1fec809 1-19
+gradlew
+  s_c11e023b173e31::t_dafd89a483816f 1-251
+gradlew.bat
+  s_c11e023b173e31::t_d023df65a84ccc 1-94
+settings.gradle.kts
+  s_c11e023b173e31::t_4c4cd713291c67 1-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "6fffbbde1db86ac541324edca76629b67d44714e",
+  "prompts": {},
+  "sessions": {
+    "s_c11e023b173e31": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "120757b1-bf56-4734-b178-00f161e1e1e1",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mustafakuloglu <mustafakuloglunun@gmail.com>"
+    }
+  }
+}
