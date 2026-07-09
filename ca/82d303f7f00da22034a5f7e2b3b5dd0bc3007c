@@ -1,0 +1,19 @@
+README.md
+  s_c11e023b173e31::t_bca391f3af1f70 18-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "ca82d303f7f00da22034a5f7e2b3b5dd0bc3007c",
+  "prompts": {},
+  "sessions": {
+    "s_c11e023b173e31": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "120757b1-bf56-4734-b178-00f161e1e1e1",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mustafakuloglu <mustafakuloglunun@gmail.com>"
+    }
+  }
+}
