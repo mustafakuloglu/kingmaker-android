@@ -44,11 +44,11 @@ import com.example.kingmaker.ui.theme.KingmakerTheme
 @Composable
 fun OverlayPopupContent(
     action: NextAction,
-    onSend: () -> Unit,
+    onSend: (String) -> Unit,
     onSkip: () -> Unit
 ) {
     var draftFieldValue by remember(action) {
-        mutableStateOf(TextFieldValue(text = action.draftMessage, selection = TextRange(action.draftMessage.length)))
+        mutableStateOf(TextFieldValue(text = action.message, selection = TextRange(action.message.length)))
     }
     val textPrimary = colorResource(R.color.popup_text_primary)
     val draftFocusRequester = remember { FocusRequester() }
@@ -69,31 +69,37 @@ fun OverlayPopupContent(
                 Row(modifier = Modifier.fillMaxWidth()) {
                     Column {
                         Text(
-                            text = action.contactName,
+                            text = action.who,
                             color = textPrimary,
-                            fontSize = 18.sp,
+                            fontSize = 20.sp,
+                            lineHeight = 20.sp,
                             fontWeight = FontWeight.Bold
                         )
                         Text(
-                            text = action.contactTitle,
+                            text = action.context,
                             color = colorResource(R.color.popup_text_secondary),
-                            fontSize = 12.sp
+                            fontSize = 10.sp,
+                            lineHeight = 10.sp
                         )
                     }
                 }
+                Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = action.reason,
+                    text = action.lastInteraction,
                     color = textPrimary,
                     fontSize = 12.sp,
+                    lineHeight = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
-
+                Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = stringResource(R.string.popup_draft_label),
-                    color = textPrimary,
+                    color = colorResource(R.color.popup_text_secondary),
                     fontSize = 16.sp,
+                    lineHeight = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
+                Spacer(modifier = Modifier.height(2.dp))
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -121,11 +127,11 @@ fun OverlayPopupContent(
                                     )
                                 }
                             },
-                        textStyle = TextStyle(color = textPrimary, fontSize = 15.sp)
+                        textStyle = TextStyle(color = textPrimary, fontSize = 15.sp, lineHeight = 18.sp)
                     )
                 }
 
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(8.dp))
                 Row(modifier = Modifier.align(Alignment.End)) {
                     Button(
                         onClick = onSkip,
@@ -139,7 +145,7 @@ fun OverlayPopupContent(
                     }
                     Spacer(modifier = Modifier.width(12.dp))
                     Button(
-                        onClick = onSend,
+                        onClick = { onSend(draftFieldValue.text) },
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
                             containerColor = colorResource(R.color.popup_accent),
@@ -159,10 +165,13 @@ fun OverlayPopupContent(
 private fun OverlayPopupContentPreview() {
     OverlayPopupContent(
         action = NextAction(
-            contactName = "Sarah Chen",
-            contactTitle = "VP Product - Intercom",
-            reason = "She replied yesterday and asked about your enterprise pilot.",
-            draftMessage = "Hey Sarah - yes, happy to share the pilot flow. Want me to send the short version? Hey Sarah - yes, happy to share the pilot flow. Want me to send the short version? Hey Sarah - yes, happy to share the pilot flow. Want me to send the short version? Hey Sarah - yes, happy to share the pilot flow. Want me to send the short version?"
+            id = 1,
+            title = "Reply to Sarah",
+            who = "Sarah Chen",
+            context = "VP Product - Intercom",
+            lastInteraction = "She replied yesterday and asked about your enterprise pilot.",
+            whyNow = "Reply due",
+            message = "Hey Sarah - yes, happy to share the pilot flow. Want me to send the short version?"
         ),
         onSend = {},
         onSkip = {}

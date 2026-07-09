@@ -25,6 +25,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 private const val NOTIF_ID = 1905
 private const val NOTIF_CHANNEL_ID = "monitor_channel"
@@ -50,17 +51,11 @@ class MonitorService : Service() {
         }
     }
 
-    // Stand-in for the backend poll: for now always returns a sample action so
-    // the popup shows on every tick. Once the backend exists, this becomes the
-    // "who to message next" call and returns null when there's nothing to do.
-    private suspend fun checkForNextAction(): NextAction? {
-        return NextAction(
-            contactName = "Sarah Chen",
-            contactTitle = "VP Product - Intercom",
-            reason = "She replied yesterday and asked about your enterprise pilot.",
-            draftMessage = "Hey Sarah - yes, happy to share the pilot flow. Want me to send the short version?"
-        )
-    }
+    private suspend fun checkForNextAction(): NextAction? =
+        withContext(Dispatchers.IO) { BackendClient.checkAction() }
+
+    private suspend fun takeAction(id: Int, message: String) =
+        withContext(Dispatchers.IO) { BackendClient.takeAction(id, message) }
 
     private fun showPopup(action: NextAction) {
         if (overlayView != null || !Settings.canDrawOverlays(this)) return
@@ -73,7 +68,10 @@ class MonitorService : Service() {
             setContent {
                 OverlayPopupContent(
                     action = action,
-                    onSend = { dismissOverlay(windowManager) },
+                    onSend = { finalMessage ->
+                        scope.launch { takeAction(action.id, finalMessage) }
+                        dismissOverlay(windowManager)
+                    },
                     onSkip = { dismissOverlay(windowManager) }
                 )
             }
