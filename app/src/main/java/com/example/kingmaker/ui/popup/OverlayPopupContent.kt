@@ -83,19 +83,18 @@ fun OverlayPopupContent(
                         )
                     }
                 }
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = action.lastInteraction,
                     color = textPrimary,
                     fontSize = 12.sp,
                     lineHeight = 15.sp,
-                    fontWeight = FontWeight.Bold
                 )
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = stringResource(R.string.popup_draft_label),
                     color = colorResource(R.color.popup_text_secondary),
-                    fontSize = 16.sp,
+                    fontSize = 10.sp,
                     lineHeight = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -104,7 +103,7 @@ fun OverlayPopupContent(
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(
-                            colorResource(R.color.popup_draft_background),
+                            colorResource(R.color.popup_card_background),
                             RoundedCornerShape(12.dp)
                         )
                         .border(
@@ -131,7 +130,7 @@ fun OverlayPopupContent(
                     )
                 }
 
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 Row(modifier = Modifier.align(Alignment.End)) {
                     Button(
                         onClick = onSkip,

@@ -40,6 +40,37 @@ object BackendClient {
         )
     }
 
+    // GET /dashboard -> {"active_goal": ..., "queued_people": [...], "contact_stats": {...}}
+    fun fetchDashboard(): DashboardData? {
+        val response = get("$BASE_URL/dashboard") ?: return null
+        return try {
+            val peopleArray = response.getJSONArray("queued_people")
+            val queuedPeople = (0 until peopleArray.length()).map { i ->
+                val person = peopleArray.getJSONObject(i)
+                QueuedPerson(
+                    initials = person.optString("initials"),
+                    name = person.optString("name"),
+                    channel = person.optString("channel"),
+                    reason = person.optString("reason"),
+                    position = person.optInt("position")
+                )
+            }
+            val stats = response.getJSONObject("contact_stats")
+            DashboardData(
+                activeGoal = response.optString("active_goal"),
+                queuedPeople = queuedPeople,
+                stats = ContactStats(
+                    total = stats.optInt("total"),
+                    active = stats.optInt("active"),
+                    needAttention = stats.optInt("need_attention")
+                )
+            )
+        } catch (e: Exception) {
+            Log.w(TAG, "dashboard parse failed: ${e.message}")
+            null
+        }
+    }
+
     private fun get(urlString: String): JSONObject? {
         var connection: HttpURLConnection? = null
         return try {
@@ -51,7 +82,7 @@ object BackendClient {
             val body = connection.inputStream.bufferedReader().readText()
             JSONObject(body)
         } catch (e: Exception) {
-            Log.w(TAG, "check_action failed: ${e.message}")
+            Log.w(TAG, "GET $urlString failed: ${e.message}")
             null
         } finally {
             connection?.disconnect()

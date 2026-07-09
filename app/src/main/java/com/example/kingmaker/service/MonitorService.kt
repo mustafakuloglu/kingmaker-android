@@ -34,6 +34,13 @@ private const val POPUP_WIDTH_RATIO = 0.9
 
 class MonitorService : Service() {
 
+    companion object {
+        // Toggled by MainActivity's lifecycle so we don't pop a floating action
+        // card over the app itself while the user is already looking at it.
+        @Volatile
+        var isAppInForeground: Boolean = false
+    }
+
     private val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
     private val overlayLifecycleOwner = OverlayLifecycleOwner()
     private var overlayView: ComposeView? = null
@@ -45,6 +52,7 @@ class MonitorService : Service() {
         scope.launch {
             while (isActive) {
                 delay(CHECK_INTERVAL_MS)
+                if (isAppInForeground) continue
                 val action = checkForNextAction()
                 if (action != null) showPopup(action)
             }

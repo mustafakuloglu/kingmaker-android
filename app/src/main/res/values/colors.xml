@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="popup_card_background">#FFFFFBFE</color>
-    <color name="popup_accent">#FF3355D8</color>
+    <color name="popup_accent">#D14368F0</color>
     <color name="popup_handle">#FFCAC4D0</color>
     <color name="popup_text_primary">#FF1C1B1F</color>
     <color name="popup_text_secondary">#FF625B71</color>
@@ -17,4 +17,8 @@
     <color name="popup_badge_background">#FFDCF0DE</color>
     <color name="popup_badge_text">#FF1E7A3D</color>
     <color name="popup_draft_background">#FFF3EDF7</color>
+
+    <color name="dashboard_background">#FFF5F5F5</color>
+    <color name="avatar_background">#FFE3DEF7</color>
+    <color name="avatar_text">#FF4A3F80</color>
 </resources>
