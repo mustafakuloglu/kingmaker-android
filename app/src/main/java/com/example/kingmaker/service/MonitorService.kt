@@ -18,6 +18,7 @@ import androidx.lifecycle.setViewTreeViewModelStoreOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
 import com.example.kingmaker.R
 import com.example.kingmaker.ui.popup.OverlayPopupContent
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -65,9 +66,13 @@ class MonitorService : Service() {
     private suspend fun takeAction(id: Int, message: String) =
         withContext(Dispatchers.IO) { BackendClient.takeAction(id, message) }
 
-    private fun showPopup(action: NextAction) {
+    // Suspends until the user dismisses the popup (Send or Skip), so the polling
+    // loop's next delay starts counting from the moment of dismissal rather than
+    // a fixed schedule set when the popup was first shown.
+    private suspend fun showPopup(action: NextAction) {
         if (overlayView != null || !Settings.canDrawOverlays(this)) return
 
+        val dismissed = CompletableDeferred<Unit>()
         val windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
         val composeView = ComposeView(this).apply {
             setViewTreeLifecycleOwner(overlayLifecycleOwner)
@@ -79,8 +84,12 @@ class MonitorService : Service() {
                     onSend = { finalMessage ->
                         scope.launch { takeAction(action.id, finalMessage) }
                         dismissOverlay(windowManager)
+                        dismissed.complete(Unit)
                     },
-                    onSkip = { dismissOverlay(windowManager) }
+                    onSkip = {
+                        dismissOverlay(windowManager)
+                        dismissed.complete(Unit)
+                    }
                 )
             }
         }
@@ -100,6 +109,8 @@ class MonitorService : Service() {
         overlayView = composeView
         overlayLifecycleOwner.handleLifecycleEvent(Lifecycle.Event.ON_START)
         overlayLifecycleOwner.handleLifecycleEvent(Lifecycle.Event.ON_RESUME)
+
+        dismissed.await()
     }
 
     private fun dismissOverlay(windowManager: WindowManager) {
